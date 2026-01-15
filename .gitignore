@@ -1,0 +1,36 @@
+# Binary files (Hasil compile)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+out/
+
+# Main application binary
+bensindb
+
+# Data files
+*.bensin
+*.db
+*.sqlite
+*.sqlite-journal
+
+# Test coverage files
+*.out
+*.test
+*.prof
+
+# Go workspace & dependencies
+go.work
+vendor/
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Environment variables
+.env
