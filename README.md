@@ -64,6 +64,11 @@ Pengujian dilakukan pada CPU **AMD Ryzen 5 5600H** menggunakan perintah `go test
 ```bash
 go get github.com/Dziqha/BensinDB
 ```
+## Ekstensi VS Code (BensinDB Editor)
+
+Gunakan GUI untuk mengelola file `.bensin` secara visual.
+
+> Cari Extension: Buka menu Extensions di VS Code (Ctrl+Shift+X) dan cari `BensinDB Editor` oleh Abdurrohman Haadziq.
 
 ## Syntax yang Intuitif
 
