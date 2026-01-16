@@ -101,7 +101,7 @@ func main() {
     defer db.Close() // Auto-save saat close
     
     // Buat tabel
-    db.Jalankan("BUAT TANGKI products (id:INT, nama:TEKS, harga:FLOAT)")
+    db.Jalankan("BUAT TANGKI products (id INT, nama TEKS, harga FLOAT)")
     
     // Insert data
     db.Jalankan("ISI TANGKI products NILAI (1, 'Laptop', 15000000)")
