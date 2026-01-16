@@ -148,20 +148,26 @@ func Load(eng *Engine, filepath string) error {
 	pos := 0
 
 	readUint16 := func() uint16 {
+		if pos+2 > len(buf) { return 0 }
 		v := binary.LittleEndian.Uint16(buf[pos : pos+2])
 		pos += 2
 		return v
+	}
+
+	readString := func() string {
+		lenUint := readUint16()
+		l := int(lenUint)
+		if pos+l > len(buf) {
+			return "" 
+		}
+		s := string(buf[pos : pos+l])
+		pos += l
+		return s
 	}
 	readUint32 := func() uint32 {
 		v := binary.LittleEndian.Uint32(buf[pos : pos+4])
 		pos += 4
 		return v
-	}
-	readString := func() string {
-		l := int(readUint16())
-		s := string(buf[pos : pos+l])
-		pos += l
-		return s
 	}
 	readByte := func() byte {
 		b := buf[pos]
@@ -242,6 +248,8 @@ func toInt64(v interface{}) int64 {
 		return int64(val)
 	case int64:
 		return val
+	case float64: 
+		return int64(val)
 	default:
 		return 0
 	}
